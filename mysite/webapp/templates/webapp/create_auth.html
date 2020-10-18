@@ -1,0 +1,21 @@
+{% extends 'webapp/base.html' %}
+
+
+{% block title %}
+Создать автора
+{% endblock %}
+
+
+{% block content %}
+<h1 align ="center">Добавить автора</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form1.surname}}<br>
+    {{form1.name}}<br>
+    {{form1.patronymic}}<br>
+    {{form1.rank}}<br>
+    {{form1.date_of_birth}}<br>
+    <button type="submit" class="btn btn-success">Добавить</button>
+    <span>{{ error1 }}</span>
+</form>
+{% endblock %}

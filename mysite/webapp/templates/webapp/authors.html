@@ -1,0 +1,24 @@
+{% extends 'webapp/base.html' %}
+
+
+{% block title %}
+Авторы
+{% endblock %}
+
+
+{% block content %}
+<h1 align ="center">Авторы</h1>
+{% if WebTable1 %}
+{% for element in WebTable1 %}
+    <div class="alert alert-success" role="alert">
+        <p>Фамилия: {{ element.surname}}</p>
+        <p>Имя: {{ element.name }}</p>
+        <p>Отчество: {{ element.patronymic}}</p>
+        <p>Звание: {{ element.rank }}</p>
+        <p>Дата рождения: {{ element.date_of_birth }}</p>
+    </div>
+{% endfor %}
+{% else %} 
+<h1>Нет записей!</h1>
+{% endif %}
+{% endblock %}

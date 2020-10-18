@@ -1,0 +1,21 @@
+{% extends 'webapp/base.html' %}
+
+
+{% block title %}
+Создать публикацию
+{% endblock %}
+
+
+{% block content %}
+<h1 align ="center">Добавить публикацию</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form.name}}<br>
+    {{form.source}}<br>
+    {{form.publicationType}}<br>
+    {{form.number_of_pages}}<br>
+    {{form.author_id}}<br>
+    <button type="submit" class="btn btn-success">Добавить</button>
+    <span>{{ error }}</span>
+</form>
+{% endblock %}
